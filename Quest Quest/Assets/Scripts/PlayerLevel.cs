@@ -22,7 +22,7 @@ public class PlayerLevel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        DebugControls();
     }
 
     // Important Note! If you are changing a float a lot and you rely on other things needing to know when that happens,
@@ -32,5 +32,14 @@ public class PlayerLevel : MonoBehaviour
     {
         Level += 1;
         Controller.OnLevelUp();
+
+    }
+
+    public void DebugControls()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            LevelUp();
+        }
     }
 }

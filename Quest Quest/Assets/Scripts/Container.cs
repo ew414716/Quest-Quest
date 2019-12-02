@@ -5,8 +5,12 @@ using UnityEngine;
 public class Container : MonoBehaviour
 {
 
-    public GameObject ContainerObject;
-    public SpriteRenderer ContainerBox;
+    //This script needs to be on a trigger that is a child of a gameobject named "ContainerObject" in the heirarchy. 
+
+    //public GameObject ContainerObject;
+    //public SpriteRenderer ContainerBox;
+    public SpriteRenderer FirstSprite;
+    public SpriteRenderer SecondSprite;
     public GameObject Player;
     public PlayerLevel Playerlevel;
 
@@ -17,8 +21,8 @@ public class Container : MonoBehaviour
     {
         Player = GameObject.Find("Player");
         Playerlevel = Player.GetComponent<PlayerLevel>();
-        ContainerObject = GameObject.Find("ContainerObject");
-        ContainerBox = ContainerObject.GetComponent<SpriteRenderer>();
+        //ContainerObject = GameObject.Find("ContainerObject");
+        //ContainerBox = ContainerObject.GetComponent<SpriteRenderer>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -43,8 +47,11 @@ public class Container : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 Playerlevel.LevelUp();
-                ContainerBox.color = Color.black;
+                //ContainerBox.color = Color.black;
+                FirstSprite.enabled = false;
+                SecondSprite.enabled = true;
                 Debug.Log("Is this thing on?");
+                Destroy(gameObject);
             }
         }
     }

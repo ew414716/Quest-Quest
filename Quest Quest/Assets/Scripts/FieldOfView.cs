@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class FieldOfView : MonoBehaviour
 {
-
+    public GameObject Player;
+    public PlayerLevel Playerlevel;
     [SerializeField] private LayerMask layerMask;
     private Mesh mesh;
     public float fov = 90;
-    public float viewDistance = 50;
+    public float viewDistance = 1;
     private Vector3 origin;
     private float startingAngle;
 
 
     private void Start()
     {
+        Player = GameObject.Find("Player");
+        Playerlevel = Player.GetComponent<PlayerLevel>();
         mesh = new Mesh();
         GetComponent<MeshFilter>().mesh = mesh;
         //fov = 90f;
@@ -121,6 +124,13 @@ public class FieldOfView : MonoBehaviour
     {
         this.viewDistance = viewDistance;
     }
+
+    public void OnLevelUp()
+    {
+        
+    }
+
+
 
 
 

@@ -57,7 +57,14 @@ public class PlayerMotor : MonoBehaviour
 		body.transform.localScale = theScale;
         */
 	}
- 
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "Teleport")
+        {
+            transform.position = col.transform.GetChild(0).position;
+        }
+    }
 }
 
 
