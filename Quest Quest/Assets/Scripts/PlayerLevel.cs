@@ -8,15 +8,15 @@ public class PlayerLevel : MonoBehaviour
     public float Level = 1;
 
     public GameObject Player;
-    public PlayerController Controller;
+    public PlayerMotor Controller;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        Player = GameObject.Find("Player");
-        Controller = Player.GetComponent<PlayerController>();
+        Player = GameObject.Find("Knight");
+        Controller = Player.GetComponent<PlayerMotor>();
     }
 
     // Update is called once per frame

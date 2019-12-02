@@ -16,7 +16,7 @@ public class FieldOfView : MonoBehaviour
 
     private void Start()
     {
-        Player = GameObject.Find("Player");
+        Player = GameObject.FindGameObjectWithTag("Player");
         Playerlevel = Player.GetComponent<PlayerLevel>();
         mesh = new Mesh();
         GetComponent<MeshFilter>().mesh = mesh;

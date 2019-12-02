@@ -19,7 +19,7 @@ public class Container : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Player = GameObject.Find("Player");
+        Player = GameObject.Find("Knight");
         Playerlevel = Player.GetComponent<PlayerLevel>();
         //ContainerObject = GameObject.Find("ContainerObject");
         //ContainerBox = ContainerObject.GetComponent<SpriteRenderer>();

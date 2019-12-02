@@ -16,7 +16,7 @@ public class WaypointAI : MonoBehaviour
         {
             //Two options for cycling through the array, if we want to go in order, it's the first. If we want it randomized, it's the second.
 
-            //current++;
+            current++;
             //current = Random.Range(0,waypoints.Length);
             if(current >= waypoints.Length)
             {

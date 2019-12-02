@@ -58,6 +58,11 @@ public class PlayerMotor : MonoBehaviour
         */
 	}
 
+   public void OnLevelUp()
+    {
+        moveLimiter += 0.08f;
+    }
+
     void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.tag == "Teleport")
